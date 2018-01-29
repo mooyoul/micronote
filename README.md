@@ -42,7 +42,7 @@ and i found awesome article about implementing gapless playback with DCT-based c
 
 #### 3. How to Test Weighted Routing (on AWS Route 53) on Mobile Devices
 
-[AWS Route 53](https://aws.amazon.com/route53/) has [Weight Routing Policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted)
+[AWS Route 53](https://aws.amazon.com/route53/) has [Weighted Routing Policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted) feature to distribute traffics to multiple destinations
 
 let example.com has two CNAME records.
 - example.com.edgekey.net. (with weight 125)
