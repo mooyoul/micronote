@@ -52,14 +52,14 @@ if i want to send traffics to "example.com.edgekey.net" only on Mobile Device (e
 we have three choices:
 
 1. Edit /etc/issues
-Easist way, but can'be used on non-rooted devices
+   - Easist way, but can'be used on non-rooted devices
 
 2. Setup Local BIND Server, and change DNS configuration on Target Device
-Configuring BIND Server may hard, but there's [Docker Image](https://hub.docker.com/r/sameersbn/bind/)!
+   - Configuring BIND Server may hard, but there's [Docker Image](https://hub.docker.com/r/sameersbn/bind/)!
 See also: http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/
 
 3. Setup HTTP Proxy with Charles Proxy, Configure Proxy on Target device, and Use DNS Spoofing feature.
-[Charles Proxy](https://www.charlesproxy.com/) is definitely swiss-army-knife. Charles has builit-in DNS Spoofing feature.
+   - [Charles Proxy](https://www.charlesproxy.com/) is definitely swiss-army-knife. Charles has builit-in DNS Spoofing feature.
 See Guide: https://www.charlesproxy.com/documentation/tools/dns-spoofing/
 
 
