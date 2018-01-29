@@ -1,7 +1,7 @@
 # micronote
 what i've learned today
 
-## 2017-01-26
+## 2018-01-26
 
 #### 1. TLSv1.1 and TLSv1.2 is disabled by default on Android < 4.4
 
