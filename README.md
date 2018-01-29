@@ -40,4 +40,27 @@ that's why i can't concatenate multiple aac audio streams without having "gap" b
 
 and i found awesome article about implementing gapless playback with DCT-based codecs (AAC/MP3) using Media Source Extensions (MSE): http://dalecurtis.github.io/llama-demo/index.html
 
+#### 3. How to Test Weighted Routing (on AWS Route 53) on Mobile Devices
+
+[AWS Route 53](https://aws.amazon.com/route53/) has [Weight Routing Policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted)
+
+let example.com has two CNAME records.
+- example.com.edgekey.net. (with weight 125)
+- distribution-id.cloudfront.net. (with weight 255)
+
+if i want to send traffics to "example.com.edgekey.net" only on Mobile Device (e.g. Android Phone), 
+we have three choices:
+
+1. Edit /etc/issues
+Easist way, but can'be used on non-rooted devices
+
+- Setup Local BIND Server, and change DNS configuration on Target Device
+Configuring BIND Server may hard, but there's [Docker Image](https://hub.docker.com/r/sameersbn/bind/)!
+See also: http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/
+
+- Setup HTTP Proxy with Charles Proxy, Configure Proxy on Target device, and Use DNS Spoofing feature.
+[Charles Proxy](https://www.charlesproxy.com/) is definitely swiss-army-knife. Charles has builit-in DNS Spoofing feature.
+See Guide: https://www.charlesproxy.com/documentation/tools/dns-spoofing/
+
+
 
