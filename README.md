@@ -5,8 +5,6 @@ what i've learned today
 
 #### 1. TLSv1.1 and TLSv1.2 is disabled by default on Android < 4.4
 
-> TL;DR: TLSv1.1/TLSv1.2 are only available in Android >= 4.4 (Kitkat, Unless enable TLSv1.1/TLSv1.2 manually)
-
 We've have an issue with old android devices after distributing some traffic to our brand new 'API Edge', which is powered by Cloudfront with [Lambda@Edge](https://aws.amazon.com/lambda/edge/).
 
 meaningful stack trace from fabric:
