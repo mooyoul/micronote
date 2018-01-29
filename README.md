@@ -23,3 +23,13 @@ I've found that old akamai edge supports TLSv1, but cloudfront didn't. cloudfron
 
 After some googling, i found [interesting android document which describes about SSL Protocol Compabitlity between android releases](https://developer.android.com/reference/javax/net/ssl/SSLSocket.html) (see section named "Default configuration for different Android versions")
 
+so issues are gone after re-configured our cloudfront distribution to support TLSv1.
+
+also there are another workaround without enabling TLSv1 on server:
+https://blog.dev-area.net/2015/08/13/android-4-1-enable-tls-1-1-and-tls-1-2/
+
+and maybe it's off topic, Android Platform (Probably Google Play Services) has awesome feature which updates security dependencies like OpenSSL dynamically for Android Apps:
+https://blog.dev-area.net/2015/08/17/protect-your-android-app-against-ssl-exploits/
+
+
+
