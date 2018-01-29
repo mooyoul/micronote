@@ -32,4 +32,12 @@ and maybe it's off topic, Android Platform (Probably Google Play Services) has a
 https://blog.dev-area.net/2015/08/17/protect-your-android-app-against-ssl-exploits/
 
 
+#### 2. DCT based Audio Codecs (e.g. AAC, MPC) have priming frames (called "Encoder Delay")
+
+https://developer.apple.com/library/content/documentation/QuickTime/QTFF/QTFFAppenG/QTFFAppenG.html
+
+that's why i can't concatenate multiple aac audio streams without having "gap" between each aac audio streams without re-encoding.
+
+and i found awesome article about implementing gapless playback with DCT-based codecs (AAC/MP3) using Media Source Extensions (MSE): http://dalecurtis.github.io/llama-demo/index.html
+
 
