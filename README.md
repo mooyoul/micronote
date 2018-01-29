@@ -60,7 +60,7 @@ See also: http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using
 
 3. Setup HTTP Proxy with Charles Proxy, Configure Proxy on Target device, and Use DNS Spoofing feature.
    - [Charles Proxy](https://www.charlesproxy.com/) is definitely swiss-army-knife. Charles has builit-in DNS Spoofing feature.
-See Guide: https://www.charlesproxy.com/documentation/tools/dns-spoofing/
+   - See Guide: https://www.charlesproxy.com/documentation/tools/dns-spoofing/
 
 
 
