@@ -32,7 +32,7 @@ and maybe it's off topic, Android Platform (Probably Google Play Services) has a
 https://blog.dev-area.net/2015/08/17/protect-your-android-app-against-ssl-exploits/
 
 
-#### 2. DCT based Audio Codecs (e.g. AAC, MPC) have priming frames (called "Encoder Delay")
+#### 2. DCT based Audio Codecs (e.g. AAC, MP3) have priming frames (called "Encoder Delay")
 
 https://developer.apple.com/library/content/documentation/QuickTime/QTFF/QTFFAppenG/QTFFAppenG.html
 
