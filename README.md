@@ -25,6 +25,12 @@ OMG!
 
 #### 2. You must handle timeouts if you access s3 without aws-sdk in Lambda, (even without VPC!)
 
+We had some connectivitiy issues between Lambda and S3 also.
+even we disabled VPC from our lambdas, sometimes we got connection timeout error.
+
+recently we've added code that access s3 via curl, sometimes we was getting connection timeout error.
+actually aws-sdk handles these errors such as "Connection Timeout", so we haven't see these errors before. but errors are coming now. so we had to implement retry logic manually.
+
 
 ## 2018-01-26
 
