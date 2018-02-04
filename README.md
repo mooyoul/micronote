@@ -5,6 +5,7 @@ what i've learned today
 
 #### 1. Using Lambda with VPC is not recommended way (officially). OMG!
 
+> According to: https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html#lambda-vpc
 > Don't put your Lambda function in a VPC unless you have to.
 >
 > There is no benefit outside of using this to access resources you cannot expose publicly, like a private Amazon Relational Database instance. Services like Amazon Elasticsearch Service can be secured over IAM with access policies, so exposing the endpoint publicly is safe and wouldn't require you to run your function in the VPC to secure it.
@@ -36,7 +37,7 @@ actually aws-sdk handles these errors such as "Connection Timeout", so we haven'
 Yeah, You can't create video which has MOV/MP4 as container through stodut
 By default, these container requires "seekable output" to write special metadatas like `moov` atom.
 
-so that's you you can't create MOV/MP4 output through non-seekable destionation.
+so that's why you can't create MOV/MP4 output through non-seekable destination.
 
 
 
