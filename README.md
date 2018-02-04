@@ -31,6 +31,14 @@ even we disabled VPC from our lambdas, sometimes we got connection timeout error
 recently we've added code that access s3 via curl, sometimes we was getting connection timeout error.
 actually aws-sdk handles these errors such as "Connection Timeout", so we haven't see these errors before. but errors are coming now. so we had to implement retry logic manually.
 
+#### 3. MP4/MOV conatiners cannot be created through pipes such as stdout
+
+Yeah, You can't create video which has MOV/MP4 as container through stodut
+By default, these container requires "seekable output" to write special metadatas like `moov` atom.
+
+so that's you you can't create MOV/MP4 output through non-seekable destionation.
+
+
 
 ## 2018-01-26
 
