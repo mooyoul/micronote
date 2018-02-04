@@ -6,6 +6,7 @@ what i've learned today
 #### 1. Using Lambda with VPC is not recommended way (officially). OMG!
 
 > According to: https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html#lambda-vpc
+>
 > Don't put your Lambda function in a VPC unless you have to.
 >
 > There is no benefit outside of using this to access resources you cannot expose publicly, like a private Amazon Relational Database instance. Services like Amazon Elasticsearch Service can be secured over IAM with access policies, so exposing the endpoint publicly is safe and wouldn't require you to run your function in the VPC to secure it.
