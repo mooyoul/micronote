@@ -1,6 +1,31 @@
 # micronote
 what i've learned today
 
+## 2018-02-04
+
+#### 1. Using Lambda with VPC is not recommended way (officially). OMG!
+
+> Don't put your Lambda function in a VPC unless you have to.
+>
+> There is no benefit outside of using this to access resources you cannot expose publicly, like a private Amazon Relational Database instance. Services like Amazon Elasticsearch Service can be secured over IAM with access policies, so exposing the endpoint publicly is safe and wouldn't require you to run your function in the VPC to secure it.
+
+We had some internet connectivity issue with our Lambdas which are configured to use VPC.
+That VPC configured to use NAT Gateway to communicate with Internet.
+Sometimes Outgoing http requests from cold-started lambdas are failing due to connection timeout.
+
+I asked to aws support to know why i got annoying timeout issues, and got this answer:
+
+> ... (truncated)  We also figured out the reason behind intermittent timeout issue. It is because Lambda containers are not ready properly sometimes before you are making http requests from your code. I understand this is something not in your control and caused due to service side issues.
+> Since the issue is intermittent and is due to complex nature of tasks that is done on Lambda service side when it creates a container inside a VPC to access Internet, you have kindly agreed to work with this limitation for now. The lambda service team is aware of this issue and hopefully they should be able to improve on this in some future release of service.
+
+and they said: Using Lambda with VPC is not recommended, [Lambda Best Practices Documentation describes that](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html#lambda-vpc) (!!)
+
+OMG!
+
+
+#### 2. You must handle timeouts if you access s3 without aws-sdk in Lambda, (even without VPC!)
+
+
 ## 2018-01-26
 
 #### 1. TLSv1.1 and TLSv1.2 is disabled by default on Android < 4.4
