@@ -1,6 +1,49 @@
 # micronote
 what i've learned today
 
+## 2018-04-04
+
+#### 1. AWS launched node.js v8.10 runtime and supports `async` function handler
+
+> Accoring to
+> https://aws.amazon.com/about-aws/whats-new/2018/04/aws-lambda-supports-nodejs/
+> https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html#nodejs-prog-model-handler-example
+
+Now you can use native `async`/`await` keyword without any transpiling, and also you can write lambda handler as `async` function like below:
+
+```typescript
+exports.myAwesomeHandler = async (event, context) => {
+  const response = { "wow": "lambda" };
+  
+  return response; // just return result instead of calling context.done, or context.fail, or callbacks ;)
+};
+```
+
+FYI, Additional Node.js dependencies versions from `process.versions`
+
+```json
+{
+    "versions": {
+        "http_parser": "2.7.0",
+        "node": "8.10.0",
+        "v8": "6.2.414.50",
+        "uv": "1.19.1",
+        "zlib": "1.2.11",
+        "ares": "1.10.1-DEV",
+        "modules": "57",
+        "nghttp2": "1.25.0",
+        "openssl": "1.0.2n",
+        "icu": "60.1",
+        "unicode": "10.0",
+        "cldr": "32.0",
+        "tz": "2017c"
+    }
+}
+```
+
+
+
+
 ## 2018-02-04
 
 #### 1. Using Lambda with VPC is not recommended way (officially). OMG!
