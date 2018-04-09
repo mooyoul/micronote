@@ -7,6 +7,7 @@ what i've learned today
 
 ##### TL;DR
 > *If you are using nodejs8.10 runtime with `aws-xray-sdk-core`, DO NOT USE async handler!*
+>
 > If you use nodejs8.10 runtime and requires `aws-xray-sdk-core` package (even you didn't send any segments to X-Ray), you'll get `null` value.
 
 See also: 
