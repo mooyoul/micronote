@@ -1,6 +1,51 @@
 # micronote
 what i've learned today
 
+## 2018-04-09
+
+#### 1. DO NOT USE `async` handler on `nodejs8.10` runtime if you are using `aws-xray-sdk-core` package
+
+##### TL;DR
+> *If you are using nodejs8.10 runtime with `aws-xray-sdk-core`, DO NOT USE async handler!*
+> If you use nodejs8.10 runtime and requires `aws-xray-sdk-core` package (even you didn't send any segments to X-Ray), you'll get `null` value.
+
+See also: 
+- https://github.com/aws/aws-xray-sdk-node/issues/29
+- https://github.com/aws/aws-xray-sdk-node/issues/27
+
+Currently there are some weird side effects with nodejs8.10 runtime and `aws-xray-sdk-core` package. 
+
+Below two codes are logically same. but you'll get another result on nodejs8.10 runtime:
+
+##### Invocation Result is `null`, which is unexpected!
+
+```js
+"use strict";
+
+module.exports.foo = async (event) => {
+  console.log("got event: %j", event);
+
+  require("aws-xray-sdk-core");
+
+  return { data: "oh my!" };
+};
+```
+
+##### Invocation result is `{ data: "oh my!" }`, which is correct.
+
+```js
+"use strict";
+
+module.exports.foo = async (event) => {
+  console.log("got event: %j", event);
+
+  require("aws-xray-sdk-core");
+
+  return { data: "oh my!" };
+};
+```
+
+
 ## 2018-04-04
 
 #### 1. AWS launched node.js v8.10 runtime and supports `async` function handler
