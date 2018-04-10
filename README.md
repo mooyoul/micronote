@@ -1,6 +1,24 @@
 # micronote
 what i've learned today
 
+## 2018-04-10
+
+Continues 2018-04-09 #1:
+
+#### 1. DO NOT MUTATE global Promise object on Lambda Node.js 8.10 runtime
+#### 2. DO NOT RETURN non-native Promise from lambda handler.
+
+Detailed issue: https://github.com/aws/aws-xray-sdk-node/issues/27#issuecomment-380092859
+
+```js
+const BbPromise = require('bluebird');
+exports.hello = () => BbPromise.resolve(3);
+```
+
+results `null`. oh my!
+
+
+
 ## 2018-04-09
 
 #### 1. DO NOT USE `async` handler on `nodejs8.10` runtime if you are using `aws-xray-sdk-core` package
