@@ -1,6 +1,15 @@
 # micronote
 what i've learned today
 
+## 2018-12-14
+
+After having Europe trip, I've finally stopped thinking of better code design of dragged project.
+
+This is what i've learned:
+
+![optimize](https://pbs.twimg.com/media/DsggeGTWsAAEm81.jpg:large)
+> Credit: [https://twitter.com/kszdev/status/1065137023260991489](https://twitter.com/kszdev/status/1065137023260991489)
+
 ## 2018-04-10
 
 Continues 2018-04-09 #1:
